@@ -1,7 +1,7 @@
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-from browser import Browser
+from bdd_selenium.steps.browser import Browser
 
 
 class BasePage(Browser):

@@ -1,21 +1,21 @@
-from selenium.webdriver.common.by import By
+import selenium.webdriver.common.by
 from selenium.webdriver.support.select import Select
 
-from pages.base_page import BasePage
+from bdd_soucedemo.pages.base_page import BasePage
 
 
 class ProductsPage(BasePage):
 
-    PRODUCTS_PAGE_TITLE = (By.CLASS_NAME, "title")
+    PRODUCTS_PAGE_TITLE = (selenium.webdriver.common.by.By.CLASS_NAME, "title")
     PRODUCTS_PAGE_URL = "https://www.saucedemo.com/inventory.html"
 
-    ITEMS_NAME = (By.CLASS_NAME, "inventory_item_name")
-    ITEMS_PRICE= (By.CLASS_NAME, "inventory_item_price")
-    DROPDOWN_SORT = (By.CLASS_NAME, "product_sort_container")
+    ITEMS_NAME = (selenium.webdriver.common.by.By.CLASS_NAME, "inventory_item_name")
+    ITEMS_PRICE= (selenium.webdriver.common.by.By.CLASS_NAME, "inventory_item_price")
+    DROPDOWN_SORT = (selenium.webdriver.common.by.By.CLASS_NAME, "product_sort_container")
 
-    ADD_TO_CART_BACKPACK = (By.ID, "add-to-cart-sauce-labs-backpack")
-    REMOVE_BACKPACK = (By.ID, "remove-sauce-labs-backpack")
-    CART_ITEM = (By.CLASS_NAME, "shopping_cart_badge")
+    ADD_TO_CART_BACKPACK = (selenium.webdriver.common.by.By.ID, "add-to-cart-sauce-labs-backpack")
+    REMOVE_BACKPACK = (selenium.webdriver.common.by.By.ID, "remove-sauce-labs-backpack")
+    CART_ITEM = (selenium.webdriver.common.by.By.CLASS_NAME, "shopping_cart_badge")
 
     def verify_products_page_title(self, title):
         return self.find(self.PRODUCTS_PAGE_TITLE).text == title

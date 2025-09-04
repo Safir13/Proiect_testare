@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from pages.base_page import BasePage
+from bdd_soucedemo.pages.base_page import BasePage
 
 
 class LoginPage(BasePage):
@@ -14,11 +14,11 @@ class LoginPage(BasePage):
     def open(self):
         self.driver.get(self.LOGIN_PAGE_URL)
 
-    def set_username(self, text):
-        self.type(self.INPUT_USERNAME, text)
+    def set_username(self, username):
+        self.type(self.INPUT_USERNAME, username)
 
-    def set_password(self, text):
-        self.type(self.INPUT_PASSWORD, text)
+    def set_password(self, password):
+        self.type(self.INPUT_PASSWORD, password )
 
     def click_login_button(self):
         self.click_element(self.BUTTON_LOGIN)
